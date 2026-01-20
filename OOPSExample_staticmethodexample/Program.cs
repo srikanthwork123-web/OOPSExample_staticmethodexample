@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 namespace OOPSExample_staticmethodexample
 {
     internal class Program
-    {
+    {//in normal class also if you have a static related varaibles or  static constructor it will load firsttime only.
+        static int a;
+        static Program()
+        {
+            a = 10;
+        }
         static void Main(string[] args)
         {//=========================calling static varibales /static methods in outside class ==============================
             //to access the static varibales or static methods in outside class,no need to create a object
