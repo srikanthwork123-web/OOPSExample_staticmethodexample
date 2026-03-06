@@ -8,9 +8,13 @@ namespace OOPSExample_staticmethodexample
 {
     internal class employee
     {//Note:If you want to access static members outside no need to create a object
+        #region variables
         public int employeeNumber;//non static variable or normal/instance variable or fields
         public static string companyname;//static variable
         public static string companylocation;//static variable
+        #endregion
+
+        #region constructors
         static employee()//static constructor=>before classname() if u use static keyword.we called this as static constructor.
         {//To assign the data for static variables we will use static constuctor.
             companyname = "wipro";
@@ -21,6 +25,9 @@ namespace OOPSExample_staticmethodexample
         {//To assign the data to non static variables we will use normal or instance constructor.
             this.employeeNumber = 10;
         }
+
+        #endregion
+
         /*methodsynatx:
         accessmodifier qualifier returntype methodname(arguments or parameters)
         {
@@ -28,18 +35,28 @@ namespace OOPSExample_staticmethodexample
         }
         Note:qualifier  means static...this is optional
          */
+        #region displaycompanydetails
+
+        /// <summary>
+        /// This method is used to Display company Details.
+        /// Here I am printing company name and company location.
+        /// </summary>
         public static void displaycompanydetails()//static method
         {//static method is used to acces or dispaly only static variables data  only.
             Console.WriteLine("company name is:" + companyname);
             Console.WriteLine("company location is:" + companylocation);
             //Console.WriteLine("company location is:" + employeeNumber);//u can't use normalor non static  variables in static method.it will throw compiletime error.
         }
+        #endregion
+
+        #region displayempdateils
         public void displayempdateils()//non static method or instance method or normal method.
         {
             Console.WriteLine("company name is:" + companyname);//we can access static variables in non static method
             Console.WriteLine("company location is:" + companylocation);//it will not throw any compiletime error
             Console.WriteLine("employeenumber is" + employeeNumber);
         }
+        #endregion 
     }
 }
 //Normal/instance/static/non static variables we can access and call in normal/non static method.
